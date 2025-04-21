@@ -1,13 +1,19 @@
 import { useRef, useState } from "react"
+
 import DataMapper from "./DataMapper";
 import data from './assets/data'
+
 import DropDownStatus from "./DropDownStatus";
 import dropDownDataStatus from "./assets/DropDowns/DropDownStatus";
+
 import DropDownGender from "./DropDownGender";
 import dropDownDataGender from "./assets/DropDowns/DropDownGender";
+
 import DropDownSize from "./DropDownSize";
 import dropDownDataSize from "./assets/DropDowns/DropDownSize";
+
 import ResetButton from "./ResetButton";
+
 import Form from "./Form";
 
 export default function App() {
@@ -32,7 +38,6 @@ export default function App() {
         });
         setdataState(filtered);
     };
-
 
     //customDropDownText - Status
     const [defaultTextStatus, setdefaultTextStatus] = useState("Status Filter ")
@@ -180,12 +185,9 @@ export default function App() {
         setdataState(updatedData)
         setinputText("")
     }
-
-
     return (
         <>
             <div className="flex gap-3 m-1 ">
-                <div>
                     <div className="flex gap-3">
                         <DropDownStatus
                             handleExpandStatus={handleExpandStatus}
@@ -214,30 +216,25 @@ export default function App() {
                             handleDropDownTextSize={handleDropDownTextSize}
                         />
                     </div>
-
-                </div>
                 <ResetButton resetButton={resetButton} />
             </div>
-
             <div>
                 <Form handleSubmit={handleSubmit} inputText={inputText} handleChange={handleChange} />
             </div>
-
             <div className="flex gap-2 ">
                 {filterOptions.status && <div className="m-2">
-                    <button className="border bg-red-400 border-red-600 text-white border-2  w-32 mx-auto" onClick={handleResetStatus}>Reset Status</button>
+                    <button className="border bg-red-400 border-red-600 text-white border-2  w-56  mx-auto" onClick={handleResetStatus}>Reset Status : {defaultTextStatus} </button>
                 </div>
                 }
                 {filterOptions.gender && <div className="m-2">
-                    <button className="border bg-purple-400 border-purple-600 text-white border-2  w-32 mx-auto" onClick={handleResetGender}>Reset Gender</button>
+                    <button className="border bg-purple-400 border-purple-600 text-white border-2  w-44  mx-auto" onClick={handleResetGender} >Reset Gender :  {defaultTextGender}</button>
                 </div>
                 }
                 {filterOptions.size && <div className="m-2">
-                    <button className="border bg-blue-400 border-blue-600 text-white border-2  w-32 mx-auto" onClick={handleResetSize}>Reset Size</button>
+                    <button className="border bg-blue-400 border-blue-600 text-white border-2  w-32 mx-auto" onClick={handleResetSize}>Reset Size:  {defaultTextSize}</button>
                 </div>
                 }
             </div>
-            
             <DataMapper data={dataState} handleDelete={handleDelete} />
         </>
     )
