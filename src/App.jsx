@@ -3,18 +3,17 @@ import { useRef, useState } from "react"
 import DataMapper from "./DataMapper";
 import data from './assets/data'
 
-import DropDownStatus from "./DropDownStatus";
-import dropDownDataStatus from "./assets/DropDowns/DropDownStatus";
 
-import DropDownGender from "./DropDownGender";
-import dropDownDataGender from "./assets/DropDowns/DropDownGender";
 
-import DropDownSize from "./DropDownSize";
+
 import dropDownDataSize from "./assets/DropDowns/DropDownSize";
+import dropDownDataGender from "./assets/DropDowns/DropDownGender";
+import dropDownDataStatus from "./assets/DropDowns/DropDownStatus";
 
 import ResetButton from "./ResetButton";
 
 import Form from "./Form";
+import DropDown from "./DropDown";
 
 export default function App() {
 
@@ -189,32 +188,32 @@ export default function App() {
         <>
             <div className="flex gap-3 m-1 ">
                     <div className="flex gap-3">
-                        <DropDownStatus
-                            handleExpandStatus={handleExpandStatus}
-                            setExpandStatus={setExpandStatus}
-                            expandStatus={expandStatus}
-                            defaultTextStatus={defaultTextStatus}
-                            dropDownDataStatus={dropDownDataStatus}
-                            handleDropDownTextStatus={handleDropDownTextStatus}
+                        <DropDown
+                            handleExpand={handleExpandStatus}
+                            setExpand={setExpandStatus}
+                            expandDropDown={expandStatus}
+                            defaultText={defaultTextStatus}
+                            dropDownData={dropDownDataStatus}
+                            handleDropDown={handleDropDownTextStatus}
+                        /> 
+                        <DropDown
+                            handleExpand={handleExpandSize}
+                            setExpand={setExpandSize}
+                            expandDropDown={expandSize}
+                            defaultText={defaultTextSize}
+                            dropDownData={dropDownDataSize}
+                            handleDropDown={handleDropDownTextSize}
+                        /> <DropDown
+                           
+                        handleExpand={handleExpanGender}
+                            setExpand={setExpandGender}
+                            expandDropDown={expandGender}
+                            defaultText={defaultTextGender}
+                            dropDownData={dropDownDataGender}
+                            handleDropDown={handleDropDownTextGender}
                         />
 
-                        <DropDownGender
-                            handleExpanGender={handleExpanGender}
-                            setExpandGender={setExpandGender}
-                            defaultTextGender={defaultTextGender}
-                            expandGender={expandGender}
-                            dropDownDataGender={dropDownDataGender}
-                            handleDropDownTextGender={handleDropDownTextGender}
-                        />
-
-                        <DropDownSize
-                            handleExpandSize={handleExpandSize}
-                            setExpandSize={setExpandSize}
-                            defaultTextSize={defaultTextSize}
-                            expandSize={expandSize}
-                            dropDownDataSize={dropDownDataSize}
-                            handleDropDownTextSize={handleDropDownTextSize}
-                        />
+                     
                     </div>
                 <ResetButton resetButton={resetButton} />
             </div>
