@@ -1,11 +1,11 @@
 const dropDownDataStatus = [
     {
         key: 1,
-        status: "completed"
+        data: "completed"
     },
     {
         key: 2,
-        status: "incompleted"
+        data: "incompleted"
     },
 ]
 export default dropDownDataStatus;

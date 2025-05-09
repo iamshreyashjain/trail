@@ -1,11 +1,11 @@
 const dropDownDataGender = [
     {
         key: 1,
-        gender: "male"
+        data: "male"
     },
     {
         key: 2,
-        gender: "female"
+        data: "female"
     },
 ]
 export default dropDownDataGender;

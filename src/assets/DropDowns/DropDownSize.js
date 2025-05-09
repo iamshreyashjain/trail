@@ -1,15 +1,15 @@
 const dropDownDataSize = [
     {
         key: 1,
-        size: "S"
+        data: "S"
     },
     {
         key: 2,
-        size: "M"
+        data: "M"
     },
     {
         key: 3,
-        size: "L"
+        data: "L"
     },
 ]
 export default dropDownDataSize;
