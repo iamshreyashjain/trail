@@ -3,9 +3,6 @@ import { useRef, useState } from "react"
 import DataMapper from "./DataMapper";
 import data from './assets/data'
 
-
-
-
 import dropDownDataSize from "./assets/DropDowns/DropDownSize";
 import dropDownDataGender from "./assets/DropDowns/DropDownGender";
 import dropDownDataStatus from "./assets/DropDowns/DropDownStatus";
@@ -14,6 +11,8 @@ import ResetButton from "./ResetButton";
 
 import Form from "./Form";
 import DropDown from "./DropDown";
+
+
 
 export default function App() {
 
@@ -52,23 +51,7 @@ export default function App() {
     const handleDropDownTextStatus = (status) => {
         setExpandStatus(false);
         setdefaultTextStatus(status);
-        // why we are not using key and then value how directly it will works for status?
-        //a//is completely valid JavaScript due to a modern syntax feature called shorthand property names.
-        // When the key and variable name are the same, you can omit the key like this:
-
-        // EXAMPLE : 1
-        // let a = 1;
-        // let obj = { a };  // same as { a: 1 }
-
-        //q // Here we are using spread operator to fetch previous data and also the data we get, 
-        //the value get directly assign to its respective key. 
         const updatedFilters = { ...filterOptions, status };
-
-        // Here’s the step-by-step:
-        // ...filterOptions copies the previous object.
-        // status is shorthand for status: status, so it updates or adds the status key.    
-        // If the same key (status) exists in both filterOptions and the object being created, the later one wins (i.e. gets overwritten).
-
         setFilterOptions(updatedFilters);
         applyFilters(updatedFilters.gender, status, updatedFilters.size);
     };
